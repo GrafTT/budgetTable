@@ -1,6 +1,9 @@
-# h1 Установка:
+# Установка:
 ---
 1.npm install
-h2 Запуск
+---
+## Запуск
+---
 development - npm start
+***
 prodaction - npm run build
