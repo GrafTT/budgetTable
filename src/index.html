@@ -7,6 +7,7 @@
     <title>Budget Table</title>
 </head>
 <body>
+    <!-- Контейнер для статической части таблицы -->
     <div class="container">
         <div class="item item-date">Дата</div>
         <div class="item item-inc">Доход</div>
@@ -35,7 +36,8 @@
         <div class="item exp-total6">Всего </div>
         <div class="item rev-total">Всего </div>
       </div>
-      
+
+      <!-- Строка ввода данных -->
       <div class="container-data-input">
         <div class="item-data data-date">01-01-2018</div> 
         <div class="item-data data-inc">0 <span class="icon-comment">&#x25b3;</span></div>
@@ -46,13 +48,14 @@
         <div class="item-data data-exp input-exp5">0 <span class="icon-comment">&#x25b3;</span></div>
         <div class="item-data data-exp input-exp6">0 <span class="icon-comment">&#x25b3;</span></div>
 
-        <div class="item-data btn-group">
+<!-- Кнопка удаление строки -->
+        <div class="item-data data-del">
           <button class="delete-btn">&#x2716;</button>
-          
         </div>
       </div>
 
-      <div class="save">
+<!-- Кнопки удаление и сохранения строк -->
+      <div class="btn-group">
         <button class="add-btn">+ Добавить строку</button>
         <button class="save-btn">Сохранить</button>
       </div>
