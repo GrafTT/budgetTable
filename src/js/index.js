@@ -10,13 +10,13 @@ import './../sass/styles.scss';
     const div = document.createElement('div');
     div.classList.add('container-data-input');
     div.innerHTML = `<div class="item-data data-date">01-01-2017</div> 
-    <div class="item-data data-inc">0 <span class="icon-comment">&#x25b3;</span></div>
-    <div class="item-data data-exp input-exp1">0 <span class="icon-comment">&#x25b3;</span></div>
-    <div class="item-data data-exp input-exp2">0 <span class="icon-comment">&#x25b3;</span></div>
-    <div class="item-data data-exp input-exp3">0 <span class="icon-comment">&#x25b3;</span></div>
-    <div class="item-data data-exp input-exp4">0 <span class="icon-comment">&#x25b3;</span></div>
-    <div class="item-data data-exp input-exp5">0 <span class="icon-comment">&#x25b3;</span></div>
-    <div class="item-data data-exp input-exp6">0 <span class="icon-comment">&#x25b3;</span></div>
+    <div class="item-data data-inc">0 <i class="far fa-comment-alt"></i></div>
+    <div class="item-data data-exp input-exp1">0 <i class="far fa-comment-alt"></i></div>
+    <div class="item-data data-exp input-exp2">0 <i class="far fa-comment-alt"></i></div>
+    <div class="item-data data-exp input-exp3">0 <i class="far fa-comment-alt"></i></div>
+    <div class="item-data data-exp input-exp4">0 <i class="far fa-comment-alt"></i></div>
+    <div class="item-data data-exp input-exp5">0 <i class="far fa-comment-alt"></i></div>
+    <div class="item-data data-exp input-exp6">0 <i class="far fa-comment-alt"></i></div>
     <div class="item-data data-del">
       <button class="delete-btn">&#x2716;</button>
     </div>`;
