@@ -2,5 +2,9 @@
     "parser": "babel-eslint",
     "rules": {
     },
+    "env": {
+      "browser": true,
+      "node": true
+    },
     "extends": ["airbnb-base"]
   }
