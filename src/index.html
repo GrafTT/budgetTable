@@ -7,8 +7,10 @@
     <title>Budget Table</title>
 </head>
 <body>
+    <div id="app"></div>
     <!-- Контейнер для статической части таблицы -->
-    <div class="container">
+    <template id="table-head">
+      <div class="container">
         <div class="item item-date">Дата</div>
         <div class="item item-inc">Доход</div>
         <div class="item item-exp">Расход</div>
@@ -36,9 +38,12 @@
         <div class="item exp-total6">Всего </div>
         <div class="item rev-total">Всего </div>
       </div>
+      <div class="table-rows"></div>
+    </template>
+    
 
       <!-- Строка ввода данных -->
-      <template id="temp">
+      <template id="row">
         <div class="container-data-input">
           <div class="item-data data-date">01-01-2018</div> 
           <div class="item-data data-inc">0 <span class="icon-comment">&#x25b3;</span></div>
@@ -58,10 +63,13 @@
       </template>
 
 <!-- Кнопки удаление и сохранения строк -->
-      <div class="btn-group">
-        <button class="add-btn">+ Добавить строку</button>
-        <button class="save-btn">Сохранить</button>
-      </div>
+      <template id="btn-group">
+        <div class="btn-group">
+          <button class="add-btn">+ Добавить строку</button>
+          <button class="save-btn">Сохранить</button>
+        </div>
+      </template>
+      
       <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
 

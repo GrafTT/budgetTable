@@ -1,11 +1,18 @@
 import Row from './Row';
 
-export default function Buttons() {
-  const addBtn = document.querySelector('.add-btn');
-  // ADD NEW ROW
 
-  addBtn.addEventListener('click', function () {
-  // Add row element to table
-    document.body.insertBefore(Row(), this.parentNode);
-  });
+export default ({onAdd, onSave}) => {
+  const btnTemp = document.querySelector('#btn-group');
+  const fragment = document.createDocumentFragment();
+  const btns = document.importNode(btnTemp.content, true);
+  fragment.appendChild(btns);
+
+  const addBtn = fragment.querySelector('.add-btn');
+  const saveBtn = fragment.querySelector('.save-btn');
+  
+  // ADD NEW ROW
+  addBtn.addEventListener('click', onAdd);
+  saveBtn.addEventListener('click', onSave);
+
+  return fragment;
 }

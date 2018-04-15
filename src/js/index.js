@@ -2,5 +2,8 @@
 // import _ from 'lodash';
 import './../sass/styles.scss';
 import Buttons from './components/Buttons';
+import RowsTable from './components/RowsTable';
 
-Buttons();
+const app = document.querySelector('#app');
+
+app.appendChild(RowsTable());
