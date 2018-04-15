@@ -9,10 +9,11 @@ export default ({onAdd, onSave}) => {
 
   const addBtn = fragment.querySelector('.add-btn');
   const saveBtn = fragment.querySelector('.save-btn');
-  
+
   // ADD NEW ROW
   addBtn.addEventListener('click', onAdd);
   saveBtn.addEventListener('click', onSave);
 
   return fragment;
 }
+

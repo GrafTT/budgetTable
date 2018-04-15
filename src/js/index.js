@@ -7,3 +7,4 @@ import RowsTable from './components/RowsTable';
 const app = document.querySelector('#app');
 
 app.appendChild(RowsTable());
+

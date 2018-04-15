@@ -34,7 +34,7 @@ const config = {
     }, {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader'/*, 'eslint-loader'*/]
       }, {
       test: /\.scss$/,
       exclude: /node_modules/,
