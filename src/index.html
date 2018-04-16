@@ -1,77 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Budget Table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Budget Table</title>
 </head>
+
 <body>
-    <div id="app"></div>
-    <!-- Контейнер для статической части таблицы -->
-    <template id="table-head">
-      <div class="container">
-        <div class="item item-date">Дата</div>
-        <div class="item item-inc">Доход</div>
-        <div class="item item-exp">Расход</div>
-        <div class="item item-rev">Прибыль</div>
-        <div class="item exp-name exp1">Статья1</div>
-        <div class="item exp-name exp2">Статья2</div>
-        <div class="item exp-name exp3">Статья3</div>
-        <div class="item exp-name exp4">Статья4</div> 
-        <div class="item exp-name exp5">Статья5</div>
-        <div class="item exp-name exp6">Статья6</div>
-        <div class="item inc-perc">%</div>
-        <div class="item exp-perc1">%</div>
-        <div class="item exp-perc2">%</div>
-        <div class="item exp-perc3">%</div>
-        <div class="item exp-perc4">%</div>
-        <div class="item exp-perc5">%</div>
-        <div class="item exp-perc6">%</div>
-        <div class="item rev-perc">%</div>
-        <div class="item inc-total">Всего </div>
-        <div class="item exp-total1">Всего </div>
-        <div class="item exp-total2">Всего </div> 
-        <div class="item exp-total3">Всего </div>
-        <div class="item exp-total4">Всего </div>
-        <div class="item exp-total5">Всего </div>
-        <div class="item exp-total6">Всего </div>
-        <div class="item rev-total">Всего </div>
+  <div id="app"></div>
+  <!-- Контейнер для статической части таблицы -->
+  <template id="table-head">
+    <div class="container">
+      <div class="item item-date">Дата</div>
+      <div class="item item-inc">Доход</div>
+      <div class="item item-exp">Расход</div>
+      <div class="item item-rev">Прибыль</div>
+      <div class="item exp-name exp1">Статья1</div>
+      <div class="item exp-name exp2">Статья2</div>
+      <div class="item exp-name exp3">Статья3</div>
+      <div class="item exp-name exp4">Статья4</div>
+      <div class="item exp-name exp5">Статья5</div>
+      <div class="item exp-name exp6">Статья6</div>
+      <div class="item inc-perc">%</div>
+      <div class="item exp-perc1">%</div>
+      <div class="item exp-perc2">%</div>
+      <div class="item exp-perc3">%</div>
+      <div class="item exp-perc4">%</div>
+      <div class="item exp-perc5">%</div>
+      <div class="item exp-perc6">%</div>
+      <div class="item rev-perc">%</div>
+      <div class="item inc-total">Всего </div>
+      <div class="item exp-total1">Всего </div>
+      <div class="item exp-total2">Всего </div>
+      <div class="item exp-total3">Всего </div>
+      <div class="item exp-total4">Всего </div>
+      <div class="item exp-total5">Всего </div>
+      <div class="item exp-total6">Всего </div>
+      <div class="item rev-total">Всего </div>
+    </div>
+    <div class="table-rows"></div>
+  </template>
+
+
+  <!-- Строка ввода данных -->
+  <template id="row">
+    <div class="container-data-input">
+      <div class="item-data data-date">01-01-2018</div>
+      <div class="item-data data-inc">0
+        <span class="icon-comment">&#x25b3;</span>
       </div>
-      <div class="table-rows"></div>
-    </template>
-    
+      <div class="item-data data-exp input-exp1">0
+        <span class="icon-comment">&#x25b3;</span>
+      </div>
+      <div class="item-data data-exp input-exp2">0
+        <span class="icon-comment">&#x25b3;</span>
+      </div>
+      <div class="item-data data-exp input-exp3">0
+        <span class="icon-comment">&#x25b3;</span>
+      </div>
+      <div class="item-data data-exp input-exp4">0
+        <span class="icon-comment">&#x25b3;</span>
+      </div>
+      <div class="item-data data-exp input-exp5">0
+        <span class="icon-comment">&#x25b3;</span>
+      </div>
+      <div class="item-data data-exp input-exp6">0
+        <span class="icon-comment">&#x25b3;</span>
+      </div>
 
-      <!-- Строка ввода данных -->
-      <template id="row">
-        <div class="container-data-input">
-          <div class="item-data data-date">01-01-2018</div> 
-          <div class="item-data data-inc">0 <span class="icon-comment">&#x25b3;</span></div>
-          <div class="item-data data-exp input-exp1">0 <span class="icon-comment">&#x25b3;</span></div>
-          <div class="item-data data-exp input-exp2">0 <span class="icon-comment">&#x25b3;</span></div>
-          <div class="item-data data-exp input-exp3">0 <span class="icon-comment">&#x25b3;</span></div>
-          <div class="item-data data-exp input-exp4">0 <span class="icon-comment">&#x25b3;</span></div>
-          <div class="item-data data-exp input-exp5">0 <span class="icon-comment">&#x25b3;</span></div>
-          <div class="item-data data-exp input-exp6">0 <span class="icon-comment">&#x25b3;</span></div>
-  
-        <!-- Кнопка удаление строки -->
-          <div class="item-data data-del">
-            <button class="delete-btn">&#x2716;</button>
-          </div>
-        </div>
-        
-      </template>
+      <!-- Кнопка удаление строки -->
+      <div class="item-data data-del">
+        <button class="delete-btn">&#x2716;</button>
+      </div>
+    </div>
 
-<!-- Кнопки удаление и сохранения строк -->
-      <template id="btn-group">
-        <div class="btn-group">
-          <button class="add-btn">+ Добавить строку</button>
-          <button class="save-btn">Сохранить</button>
-        </div>
-      </template>
-      
-      <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  </template>
+
+  <!-- Кнопки удаление и сохранения строк -->
+  <template id="btn-group">
+    <div class="btn-group">
+      <button class="add-btn">+ Добавить строку</button>
+      <button class="save-btn">Сохранить</button>
+    </div>
+  </template>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
 
 
 </body>
+
 </html>

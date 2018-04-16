@@ -1,7 +1,7 @@
-import Row from './Row';
-
-
-export default ({onAdd, onSave}) => {
+export default ({
+  onAdd,
+  onSave,
+}) => {
   const btnTemp = document.querySelector('#btn-group');
   const fragment = document.createDocumentFragment();
   const btns = document.importNode(btnTemp.content, true);
@@ -15,5 +15,4 @@ export default ({onAdd, onSave}) => {
   saveBtn.addEventListener('click', onSave);
 
   return fragment;
-}
-
+};
