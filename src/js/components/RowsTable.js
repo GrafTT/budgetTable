@@ -4,25 +4,25 @@ import RowsTableList from './RowsTableList';
 const ListService = {
   subscribers: [],
   data: [],
-  subcribe(sub){
+  subcribe(sub) {
     this.subscribers.push(sub);
     sub(this.data);
   },
-  publish(){
-    this.subscribers.forEach(val => {
-      val(this.data)
+  publish() {
+    this.subscribers.forEach((sub) => {
+      sub(this.data);
     });
   },
-  remove(i){
+  remove(i) {
     this.data.splice(i, 1);
     this.publish();
-    console.log('onAdd', i, list);
+    console.log('onAdd', i);
   },
-  add(){
+  add() {
     this.data.push({});
     this.publish();
-    console.log('onAdd', list);
-  }
+    console.log('onAdd');
+  },
 };
 
 export default () => {
@@ -34,29 +34,25 @@ export default () => {
   const tableRow = table.querySelector('.table-rows');
 
 
-  ListService.subcribe((list)=>{
+  ListService.subcribe((list) => {
     const rowsTableListComponent = RowsTableList({
-      onRemove(i) {
-        list.splice(i, 1);
-        console.log('onAdd', i, list);
-      },
+      onRemove: i => ListService.remove(i),
       list,
     });
     tableRow.innerHTML = '';
     tableRow.appendChild(rowsTableListComponent);
-  })
-
+  });
 
   // BUTTONS
- 
-  const onSave = function () {
 
-  };
+  const onSave = function () {};
+
   // ADD BUTTONS
-  table.appendChild(Buttons({ onAdd: () => ListService.add(), onSave }));
+  table.appendChild(Buttons({
+    onAdd: () => ListService.add(),
+    onSave,
+  }));
 
   fragment.appendChild(table);
   return fragment;
 };
-
-
