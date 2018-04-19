@@ -12,6 +12,7 @@ export default () => {
     ceilText.style.display = 'none';
   });
 
+  // С этого обьекта данные вычисляються в ячейки 'Всего' '%'. А изменяються через input.
   const data = {
     date: null,
     inc: null,
@@ -19,6 +20,7 @@ export default () => {
     exp2: null,
   };
 
+  // При нажатии ентер делаю проверку, что введено число или что строка не пустая. Далее в зависимости от того в какой ячейки введены данные - сохраняем в data. И вот непонятно где создавать data и как к ней добраться с этого копмонента.
   ceilInput.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -38,6 +40,7 @@ export default () => {
       }
     }
   });
+
   console.log(data);
   return fragment;
 };
