@@ -1,7 +1,4 @@
-export default ({
-  onAdd,
-  onSave,
-}) => {
+export default ({ onAdd, onSave }) => {
   const btnTemp = document.querySelector('#btn-group');
   const fragment = document.createDocumentFragment();
   const btns = document.importNode(btnTemp.content, true);

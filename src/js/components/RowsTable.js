@@ -16,12 +16,13 @@ const ListService = {
   remove(i) {
     this.data.splice(i, 1);
     this.publish();
-    console.log('onAdd', i);
+    console.log('onAdd', i, this.data);
   },
   add() {
-    this.data.push({});
+    this.data.push({
+    });
     this.publish();
-    console.log('onAdd');
+    console.log('onAdd', this.data);
   },
 };
 
@@ -33,10 +34,9 @@ export default () => {
 
   const tableRow = table.querySelector('.table-rows');
 
-
   ListService.subcribe((list) => {
     const rowsTableListComponent = RowsTableList({
-      onRemove: i => ListService.remove(i),
+      onRemove: ListService.remove.bind(ListService),
       list,
     });
     tableRow.innerHTML = '';
@@ -49,7 +49,7 @@ export default () => {
 
   // ADD BUTTONS
   table.appendChild(Buttons({
-    onAdd: () => ListService.add(),
+    onAdd: ListService.add.bind(ListService),
     onSave,
   }));
 

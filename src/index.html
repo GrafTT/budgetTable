@@ -19,25 +19,16 @@
       <div class="item item-rev">Прибыль</div>
       <div class="item exp-name exp1">Статья1</div>
       <div class="item exp-name exp2">Статья2</div>
-      <div class="item exp-name exp3">Статья3</div>
-      <div class="item exp-name exp4">Статья4</div>
-      <div class="item exp-name exp5">Статья5</div>
-      <div class="item exp-name exp6">Статья6</div>
+
       <div class="item inc-perc">%</div>
       <div class="item exp-perc1">%</div>
       <div class="item exp-perc2">%</div>
-      <div class="item exp-perc3">%</div>
-      <div class="item exp-perc4">%</div>
-      <div class="item exp-perc5">%</div>
-      <div class="item exp-perc6">%</div>
+
       <div class="item rev-perc">%</div>
       <div class="item inc-total">Всего </div>
       <div class="item exp-total1">Всего </div>
       <div class="item exp-total2">Всего </div>
-      <div class="item exp-total3">Всего </div>
-      <div class="item exp-total4">Всего </div>
-      <div class="item exp-total5">Всего </div>
-      <div class="item exp-total6">Всего </div>
+
       <div class="item rev-total">Всего </div>
     </div>
     <div class="table-rows"></div>
@@ -47,27 +38,18 @@
   <!-- Строка ввода данных -->
   <template id="row">
     <div class="container-data-input">
-      <div class="item-data data-date">01-01-2018</div>
-      <div class="item-data data-inc">0
-        <span class="icon-comment">&#x25b3;</span>
+      <div class="item-data data-date">
+
       </div>
-      <div class="item-data data-exp input-exp1">0
-        <span class="icon-comment">&#x25b3;</span>
+
+      <div class="item-data data-inc" data-input>
+        
       </div>
-      <div class="item-data data-exp input-exp2">0
-        <span class="icon-comment">&#x25b3;</span>
+      <div class="item-data data-exp" data-input>
+        
       </div>
-      <div class="item-data data-exp input-exp3">0
-        <span class="icon-comment">&#x25b3;</span>
-      </div>
-      <div class="item-data data-exp input-exp4">0
-        <span class="icon-comment">&#x25b3;</span>
-      </div>
-      <div class="item-data data-exp input-exp5">0
-        <span class="icon-comment">&#x25b3;</span>
-      </div>
-      <div class="item-data data-exp input-exp6">0
-        <span class="icon-comment">&#x25b3;</span>
+      <div class="item-data data-exp" data-input>
+        
       </div>
 
       <!-- Кнопка удаление строки -->
@@ -84,6 +66,17 @@
       <button class="add-btn">+ Добавить строку</button>
       <button class="save-btn">Сохранить</button>
     </div>
+  </template>
+
+  <!-- CELL -->
+  <template id="ceil">
+      <span class="ceil-text">
+        0
+      </span>
+      <form class="ceil-input">
+        <input type="text" autofocus>
+      </form>
+      <span class="icon-comment">&#x25b3;</span>
   </template>
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"

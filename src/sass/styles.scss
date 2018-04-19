@@ -1,138 +1,150 @@
- /*Шаблон сетки для статической части таблицы*/
+/*Шаблон сетки для статической части таблицы*/
 
- .container {
-   display: grid;
-   /*   grid-auto-columns: repeat(9, 1fr);
+.container {
+  display: grid;
+  /*   grid-auto-columns: repeat(9, 1fr);
   grid-auto-rows: auto; */
-   grid-row-gap: 1px;
-   grid-template-columns: 1.5fr repeat(7, 1fr) 2fr;
-   grid-template-rows: repeat(4, 2em);
-   grid-column-gap: 1px;
-   background: #000;
-   border: 1px solid black;
- }
+  grid-row-gap: 1px;
+  grid-template-columns: 1.5fr repeat(3, 1fr) 2fr;
+  grid-template-rows: repeat(4, 2em);
+  grid-column-gap: 1px;
+  background: #000;
+  border: 1px solid black;
+}
 
- .item-date {
-   grid-row: 1/5;
-   grid-column: 1 / 2;
- }
+.item-date {
+  grid-row: 1/5;
+  grid-column: 1 / 2;
+}
 
- .item-inc {
-   grid-row: 1/3;
-   grid-column: 2 / 3;
- }
+.item-inc {
+  grid-row: 1/3;
+  grid-column: 2 / 3;
+}
 
- .item-exp {
-   grid-row: 1;
-   grid-column: 3 / 9;
- }
+.item-exp {
+  grid-row: 1;
+  grid-column: 3 / 5;
+}
 
- .item-rev {
-   grid-row: 1/3;
-   grid-column: 9 / 9;
- }
+.item-rev {
+  grid-row: 1/3;
+  grid-column: 5 / 5;
+}
 
- .exp1 {
-   grid-row: 2/3;
-   grid-column: 3 / 4;
- }
+.exp1 {
+  grid-row: 2/3;
+  grid-column: 3 / 4;
+}
 
- .exp2 {
-   grid-row: 2/3;
-   grid-column: 4 / 5;
- }
+.exp2 {
+  grid-row: 2/3;
+  grid-column: 4 / 5;
+}
 
- .exp3 {
-   grid-row: 2/3;
-   grid-column: 5 / 6;
- }
+//  .exp3 {
+//    grid-row: 2/3;
+//    grid-column: 5 / 6;
+//  }
 
- .exp4 {
-   grid-row: 2/3;
-   grid-column: 6 / 7;
- }
+//  .exp4 {
+//    grid-row: 2/3;
+//    grid-column: 6 / 7;
+//  }
 
- .exp5 {
-   grid-row: 2/3;
-   grid-column: 7 / 8;
- }
+//  .exp5 {
+//    grid-row: 2/3;
+//    grid-column: 7 / 8;
+//  }
 
- .exp6 {
-   grid-row: 2/3;
-   grid-column: 8 / 9;
- }
+//  .exp6 {
+//    grid-row: 2/3;
+//    grid-column: 8 / 9;
+//  }
 
- .item {
-   background: lightgray;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+.item {
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- /*Шаблон сетки для строки ввода данных*/
+/*Шаблон сетки для строки ввода данных*/
 
- .container-data-input {
-   margin-top: 5px;
-   display: grid;
-   grid-row-gap: 5px;
-   grid-template-columns: 1.5fr repeat(7, 1fr) 2fr;
-   grid-template-rows: 2em;
-   grid-column-gap: 1px;
-   /*background: #000;
+.container-data-input {
+  margin-top: 5px;
+  display: grid;
+  grid-row-gap: 5px;
+  grid-template-columns: 1.5fr repeat(3, 1fr) 2fr;
+  grid-template-rows: 2em;
+  grid-column-gap: 1px;
+  /*background: #000;
   border: 1px solid black;*/
- }
+}
 
- .item-data {
-   background: lightblue;
-   border-radius: 8px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0 5px;
- }
+.item-data {
+  background: lightblue;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
 
- /*Кнопка удаления*/
+/*Кнопка удаления*/
 
- .data-del {
-   display: flex;
-   justify-content: space-between;
-   background: transparent;
-   .delete-btn {
-     color: rgb(207, 23, 23);
-     border-radius: 50%;
-     border: 1px solid rgb(207, 23, 23);
-     background: transparent;
-     &:hover {
-       border: 2px solid rgb(207, 23, 23);
-     }
-   }
- }
+.data-del {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  .delete-btn {
+    color: rgb(207, 23, 23);
+    border-radius: 50%;
+    border: 1px solid rgb(207, 23, 23);
+    background: transparent;
+    &:hover {
+      border: 2px solid rgb(207, 23, 23);
+    }
+  }
+}
 
- .btn-group {
-   margin-top: 5px;
-   padding: 10px;
-   display: flex;
-   justify-content: flex-end;
-   font-size: 1em;
-   .save-btn {
-     padding: 10px 5px;
-     background-color: rgb(6, 116, 55);
-     color: #fff;
-     border: none;
-     transition: background ease-in-out .25s;
-     &:hover {
-       background: rgba(6, 116, 55, 0.7);
-     }
-   }
-   .add-btn {
-     padding: 10px 5px;
-     background-color: rgb(6, 23, 116);
-     color: #fff;
-     border: none;
-     margin-right: 10px;
-     transition: background ease-in-out .25s;
-     &:hover {
-       background: rgba(6, 23, 116, 0.7);
-     }
-   }
- }
+.btn-group {
+  margin-top: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1em;
+  .save-btn {
+    padding: 10px 5px;
+    background-color: rgb(6, 116, 55);
+    color: #fff;
+    border: none;
+    transition: background ease-in-out 0.25s;
+    &:hover {
+      background: rgba(6, 116, 55, 0.7);
+    }
+  }
+  .add-btn {
+    padding: 10px 5px;
+    background-color: rgb(6, 23, 116);
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+    transition: background ease-in-out 0.25s;
+    &:hover {
+      background: rgba(6, 23, 116, 0.7);
+    }
+  }
+}
+
+.ceil-input {
+  display: none;
+
+  input {
+    width: 100%;
+  }
+}
+.ceil-text {
+  display: block;
+  width: 100%;
+}
