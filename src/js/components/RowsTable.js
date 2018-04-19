@@ -27,10 +27,10 @@ const ListService = {
 };
 
 export default () => {
-  const RowsTable = document.querySelector('#table-head');
+  const template = document.querySelector('#table-head');
 
   const fragment = document.createDocumentFragment();
-  const table = document.importNode(RowsTable.content, true);
+  const table = document.importNode(template.content, true);
 
   const tableRow = table.querySelector('.table-rows');
 
@@ -54,5 +54,6 @@ export default () => {
   }));
 
   fragment.appendChild(table);
+
   return fragment;
 };

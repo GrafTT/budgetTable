@@ -6,20 +6,38 @@ export default () => {
   fragment.appendChild(ceil);
   const ceilInput = fragment.querySelector('.ceil-input');
   const ceilText = fragment.querySelector('.ceil-text');
-  const input = fragment.querySelector('.ceil-input input');
 
   ceilText.addEventListener('dblclick', () => {
     ceilInput.style.display = 'block';
     ceilText.style.display = 'none';
   });
 
-  ceilInput.addEventListener('submit', (e) => {
-    e.preventDefault();
-    ceilText.style.display = 'block';
-    ceilInput.style.display = 'none';
-    ceilText.textContent = input.value;
-    console.log(e.target)
-  });
+  const data = {
+    date: null,
+    inc: null,
+    exp1: null,
+    exp2: null,
+  };
 
+  ceilInput.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      ceilText.style.display = 'block';
+      ceilInput.style.display = 'none';
+      if (!isNaN(e.target.value) && e.target.value !== '') {
+        if (e.target.closest('.data-inc')) {
+          data.inc = e.target.value;
+          ceilText.innerHTML = data.inc;
+        } else if (e.target.closest('.data-exp1')) {
+          data.exp1 = e.target.value;
+          ceilText.innerHTML = data.exp1;
+        } else if (e.target.closest('.data-exp2')) {
+          data.exp2 = e.target.value;
+          ceilText.innerHTML = data.exp2;
+        }
+      }
+    }
+  });
+  console.log(data);
   return fragment;
 };
