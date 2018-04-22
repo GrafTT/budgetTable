@@ -11,7 +11,11 @@ export default ({
 
   divs.forEach((div) => {
     div.appendChild(Ceil({ val, i, update }));
+    const text = div.querySelector('.ceil-text');
+    console.log(text, div.dataset.input);
+    text.innerHTML = val[div.dataset.input];
   });
+
   fragment.appendChild(row);
 
   const deleteBtn = fragment.querySelector('.delete-btn');

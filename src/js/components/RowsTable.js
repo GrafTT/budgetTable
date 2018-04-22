@@ -20,16 +20,17 @@ const ListService = {
   },
   add() {
     this.data.push({
-      date: null,
-      inc: null,
-      exp1: null,
-      exp2: null,
+      date: 0,
+      inc: 0,
+      exp1: 0,
+      exp2: 0,
     });
     this.publish();
     console.log('onAdd', this.data);
   },
   update(input, key, i) {
     this.data[i][key] = input;
+    console.log('update', this.data);
   },
 };
 
@@ -40,6 +41,11 @@ export default () => {
   const table = document.importNode(template.content, true);
 
   const tableRow = table.querySelector('.table-rows');
+
+  function total() {
+    const incArr = ListService.data.map(x => x.inc);
+    return incArr.reduce((a, b) => a + b, 0);
+  }
 
   ListService.subcribe((list) => {
     const rowsTableListComponent = RowsTableList({
@@ -52,13 +58,8 @@ export default () => {
   });
 
   // const totalInc = table.querySelector('.inc-total');
-  // function total() {
-  //   const incArr = ListService.data.map(( x ) => {
-  //     return x.inc;
-  //   })
-  //   return incArr.reduce((a, b) => a + b, 0);
-  // }
-  // console.log(total(), ListService.data)
+
+  console.log(total(), ListService.data);
 
   // BUTTONS
 

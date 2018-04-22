@@ -21,7 +21,6 @@ export default ({ val, i, update }) => {
         if (e.target.closest('.data-inc')) {
           update(e.target.value, 'inc', i);
           ceilText.innerHTML = val.inc;
-          console.log(val.inc);
         } else if (e.target.closest('.data-exp1')) {
           update(e.target.value, 'exp1', i);
           ceilText.innerHTML = val.exp1;
