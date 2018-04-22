@@ -20,9 +20,16 @@ const ListService = {
   },
   add() {
     this.data.push({
+      date: null,
+      inc: null,
+      exp1: null,
+      exp2: null,
     });
     this.publish();
     console.log('onAdd', this.data);
+  },
+  update(input, key, i) {
+    this.data[i][key] = input;
   },
 };
 
@@ -37,11 +44,21 @@ export default () => {
   ListService.subcribe((list) => {
     const rowsTableListComponent = RowsTableList({
       onRemove: ListService.remove.bind(ListService),
+      update: ListService.update.bind(ListService),
       list,
     });
     tableRow.innerHTML = '';
     tableRow.appendChild(rowsTableListComponent);
   });
+
+  // const totalInc = table.querySelector('.inc-total');
+  // function total() {
+  //   const incArr = ListService.data.map(( x ) => {
+  //     return x.inc;
+  //   })
+  //   return incArr.reduce((a, b) => a + b, 0);
+  // }
+  // console.log(total(), ListService.data)
 
   // BUTTONS
 

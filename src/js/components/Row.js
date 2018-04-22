@@ -1,6 +1,8 @@
 import Ceil from './Ceil';
 
-export default ({ onRemove }) => {
+export default ({
+  onRemove, val, i, update,
+}) => {
   const template = document.querySelector('#row');
   const fragment = document.createDocumentFragment();
   const row = document.importNode(template.content, true);
@@ -8,7 +10,7 @@ export default ({ onRemove }) => {
   const divs = row.querySelectorAll('[data-input]');
 
   divs.forEach((div) => {
-    div.appendChild(Ceil());
+    div.appendChild(Ceil({ val, i, update }));
   });
   fragment.appendChild(row);
 
