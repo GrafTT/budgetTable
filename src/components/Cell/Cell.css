@@ -1,0 +1,17 @@
+.ceil-input {
+  display: none;
+  width: 100%;
+}
+.ceil-text {
+  display: block;
+  width: 100%;
+}
+
+.item-data-cell {
+  background: lightblue;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}

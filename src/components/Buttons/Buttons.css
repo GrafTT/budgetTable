@@ -1,0 +1,28 @@
+.btn-group {
+  margin-top: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1em;
+  }
+  .save-btn {
+    padding: 10px 5px;
+    background-color: rgb(6, 116, 55);
+    color: #fff;
+    border: none;
+    transition: background ease-in-out 0.25s;
+  }
+  .save-btn:hover {
+    background: rgba(6, 116, 55, 0.7);
+  }
+  .add-btn {
+    padding: 10px 5px;
+    background-color: rgb(6, 23, 116);
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+    transition: background ease-in-out 0.25s;
+  }
+  .add-btn:hover {
+    background: rgba(6, 23, 116, 0.7);
+  }
