@@ -1,7 +1,7 @@
 import Ceil from './Ceil';
 
 export default ({
-  onRemove, val, i, update,
+  onRemove, val, i, update, updTable,
 }) => {
   const template = document.querySelector('#row');
   const fragment = document.createDocumentFragment();
@@ -10,10 +10,17 @@ export default ({
   const divs = row.querySelectorAll('[data-input]');
 
   divs.forEach((div) => {
-    div.appendChild(Ceil({ val, i, update }));
+    const key = div.dataset.input;
+    div.appendChild(Ceil({
+      val,
+      i,
+      key,
+      update,
+      updTable,
+    }));
+
     const text = div.querySelector('.ceil-text');
-    console.log(text, div.dataset.input);
-    text.innerHTML = val[div.dataset.input];
+    text.innerHTML = val[key];
   });
 
   fragment.appendChild(row);

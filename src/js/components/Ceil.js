@@ -1,4 +1,6 @@
-export default ({ val, i, update }) => {
+export default ({
+  val, i, update, updTable, key,
+}) => {
   const template = document.querySelector('#ceil');
   const fragment = document.createDocumentFragment();
   const ceil = document.importNode(template.content, true);
@@ -17,17 +19,13 @@ export default ({ val, i, update }) => {
       e.preventDefault();
       ceilText.style.display = 'block';
       ceilInput.style.display = 'none';
-      if (!isNaN(e.target.value) && e.target.value !== '') {
-        if (e.target.closest('.data-inc')) {
-          update(e.target.value, 'inc', i);
-          ceilText.innerHTML = val.inc;
-        } else if (e.target.closest('.data-exp1')) {
-          update(e.target.value, 'exp1', i);
-          ceilText.innerHTML = val.exp1;
-        } else if (e.target.closest('.data-exp2')) {
-          update(e.target.value, 'exp2', i);
-          ceilText.innerHTML = val.exp2;
-        }
+
+      const inputValue = e.target.value;
+
+      if (!isNaN(inputValue) && inputValue !== '') {
+        update(inputValue, key, i);
+        updTable();
+        ceilText.innerHTML = val[key];
       }
     }
   });
