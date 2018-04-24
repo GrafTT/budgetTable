@@ -11,7 +11,7 @@ const ListService = {
     perc1: 0,
     perc2: 0,
     revTotal: 0,
-    revTotal: 0,
+    revPerc: 0,
   },
   subcribe(sub) {
     this.subscribers.push(sub);
@@ -46,7 +46,12 @@ const ListService = {
     this.tableData.inc = this.data.map(x => +x.inc).reduce((a, b) => a + b, 0);
     this.tableData.exp1 = this.data.map(x => +x.exp1).reduce((a, b) => a + b, 0);
     this.tableData.exp2 = this.data.map(x => +x.exp2).reduce((a, b) => a + b, 0);
-    
+
+    this.tableData.revTotal = this.tableData.inc - this.tableData.exp1 - this.tableData.exp2;
+    this.tableData.revPerc = ((this.tableData.revTotal / this.tableData.inc) * 100).toFixed(1);
+
+    this.tableData.perc1 = ((this.tableData.exp1 / this.tableData.inc) * 100).toFixed(1);
+    this.tableData.perc2 = ((this.tableData.exp2 / this.tableData.inc) * 100).toFixed(1);
   },
 };
 
@@ -60,11 +65,21 @@ export default () => {
   const totalInc = table.querySelector('.inc-total');
   const totalExp1 = table.querySelector('.exp-total1');
   const totalExp2 = table.querySelector('.exp-total2');
+  const revTotal = table.querySelector('.rev-total');
+
+  const expPerc1 = table.querySelector('.exp-perc1');
+  const expPerc2 = table.querySelector('.exp-perc2');
+  const revPerc = table.querySelector('.rev-perc');
 
   function updTable() {
     totalInc.innerHTML = ListService.tableData.inc;
     totalExp1.innerHTML = ListService.tableData.exp1;
     totalExp2.innerHTML = ListService.tableData.exp2;
+    revTotal.innerHTML = ListService.tableData.revTotal;
+
+    expPerc1.innerHTML = `${ListService.tableData.perc1}%`;
+    expPerc2.innerHTML = `${ListService.tableData.perc2}%`;
+    revPerc.innerHTML = `${ListService.tableData.revPerc}%`;
   }
 
   ListService.subcribe((list) => {
